@@ -1,7 +1,10 @@
-const swipeLeft = (dummy) => {
+import { addNumber } from './addNumber';
+import { deepClone } from './deepClone';
+
+export const swipeLeft = (grid) => {
 	console.log('swipe left');
-	let oldGrid = data;
-	let newArray = cloneDeep(data);
+	let oldGrid = grid;
+	let newArray = deepClone(grid);
 
 	for (let i = 0; i < 4; i++) {
 		let b = newArray[i];
@@ -37,17 +40,14 @@ const swipeLeft = (dummy) => {
 	if (JSON.stringify(oldGrid) !== JSON.stringify(newArray)) {
 		addNumber(newArray);
 	}
-	if (dummy) {
-		return newArray;
-	} else {
-		setData(newArray);
-	}
+
+	return newArray;
 };
 
-const swipeRight = (dummy) => {
+export const swipeRight = (grid) => {
 	console.log('swipe right');
-	let oldData = data;
-	let newArray = cloneDeep(data);
+	let oldData = grid;
+	let newArray = deepClone(grid);
 
 	for (let i = 3; i >= 0; i--) {
 		let b = newArray[i];
@@ -83,18 +83,14 @@ const swipeRight = (dummy) => {
 	if (JSON.stringify(newArray) !== JSON.stringify(oldData)) {
 		addNumber(newArray);
 	}
-	if (dummy) {
-		return newArray;
-	} else {
-		setData(newArray);
-	}
+	return newArray;
 };
 
-const swipeDown = (dummy) => {
+export const swipeDown = (grid) => {
 	console.log('swipe down');
-	console.log(data);
-	let b = cloneDeep(data);
-	let oldData = JSON.parse(JSON.stringify(data));
+	console.log(grid);
+	let b = deepClone(grid);
+	let oldData = JSON.parse(JSON.stringify(grid));
 	for (let i = 3; i >= 0; i--) {
 		let slow = b.length - 1;
 		let fast = slow - 1;
@@ -128,17 +124,13 @@ const swipeDown = (dummy) => {
 	if (JSON.stringify(b) !== JSON.stringify(oldData)) {
 		addNumber(b);
 	}
-	if (dummy) {
-		return b;
-	} else {
-		setData(b);
-	}
+	return b;
 };
 
-const swipeUp = (dummy) => {
+export const swipeUp = (grid) => {
 	console.log('swipe up');
-	let b = cloneDeep(data);
-	let oldData = JSON.parse(JSON.stringify(data));
+	let b = deepClone(grid);
+	let oldData = JSON.parse(JSON.stringify(grid));
 	for (let i = 0; i < 4; i++) {
 		let slow = 0;
 		let fast = 1;
@@ -172,9 +164,5 @@ const swipeUp = (dummy) => {
 	if (JSON.stringify(oldData) !== JSON.stringify(b)) {
 		addNumber(b);
 	}
-	if (dummy) {
-		return b;
-	} else {
-		setData(b);
-	}
+	return b;
 };
