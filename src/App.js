@@ -1,9 +1,13 @@
-import './App.scss';
+import './styles/App.scss';
+import Game from './Components/Game';
+import { GameProvider } from './context/GameContext';
 
 function App() {
 	return (
 		<div className="App">
-			<h1>Hello world</h1>
+			<GameProvider>
+				<Game />
+			</GameProvider>
 		</div>
 	);
 }
