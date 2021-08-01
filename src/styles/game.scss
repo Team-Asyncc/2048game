@@ -1,0 +1,15 @@
+.game__container {
+	width: fit-content;
+	height: fit-content;
+}
+
+.game__board__container {
+	width: max-content;
+	padding: 5px;
+	background-color: #ad9d8f;
+	border-radius: 5px;
+}
+
+.game__row {
+	display: flex;
+}
