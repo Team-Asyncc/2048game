@@ -1,7 +1,13 @@
 import { addNumber } from './addNumber';
 import { deepClone } from './deepClone';
 export let score = 0;
-export const swipeLeft = (grid, score, gameClass, setGameClass) => {
+export const swipeLeft = (
+	grid,
+	score,
+	gameClass,
+	setGameClass,
+	setCellMoving
+) => {
 	console.log('swipe left');
 	let oldGrid = grid;
 	let newArray = deepClone(grid);
@@ -43,16 +49,23 @@ export const swipeLeft = (grid, score, gameClass, setGameClass) => {
 		}
 	}
 	if (JSON.stringify(oldGrid) !== JSON.stringify(newArray)) {
-		setTimeout(() => {
-			addNumber(newArray);
-		}, 300);
+		setCellMoving(true);
+
+		addNumber(newArray);
+
 		setGameClass(classArray);
 	}
 
 	return { newArray, score };
 };
 
-export const swipeRight = (grid, score, gameClass, setGameClass) => {
+export const swipeRight = (
+	grid,
+	score,
+	gameClass,
+	setGameClass,
+	setCellMoving
+) => {
 	console.log('swipe right');
 	let oldData = grid;
 	let newArray = deepClone(grid);
@@ -95,15 +108,22 @@ export const swipeRight = (grid, score, gameClass, setGameClass) => {
 		}
 	}
 	if (JSON.stringify(newArray) !== JSON.stringify(oldData)) {
-		setTimeout(() => {
-			addNumber(newArray);
-		}, 300);
+		setCellMoving(true);
+
+		addNumber(newArray);
+
 		setGameClass(classArray);
 	}
 	return { newArray, score };
 };
 
-export const swipeDown = (grid, score, gameClass, setGameClass) => {
+export const swipeDown = (
+	grid,
+	score,
+	gameClass,
+	setGameClass,
+	setCellMoving
+) => {
 	console.log('swipe down');
 	console.log(grid);
 	let b = deepClone(grid);
@@ -146,15 +166,22 @@ export const swipeDown = (grid, score, gameClass, setGameClass) => {
 		}
 	}
 	if (JSON.stringify(b) !== JSON.stringify(oldData)) {
-		setTimeout(() => {
-			addNumber(b);
-		}, 300);
+		setCellMoving(true);
+
+		addNumber(b);
+
 		setGameClass(classArray);
 	}
 	return { b, score };
 };
 
-export const swipeUp = (grid, score, gameClass, setGameClass) => {
+export const swipeUp = (
+	grid,
+	score,
+	gameClass,
+	setGameClass,
+	setCellMoving
+) => {
 	console.log('swipe up');
 	let b = deepClone(grid);
 	let oldData = JSON.parse(JSON.stringify(grid));
@@ -196,9 +223,10 @@ export const swipeUp = (grid, score, gameClass, setGameClass) => {
 		}
 	}
 	if (JSON.stringify(oldData) !== JSON.stringify(b)) {
-		setTimeout(() => {
-			addNumber(b);
-		}, 300);
+		setCellMoving(true);
+
+		addNumber(b);
+
 		setGameClass(classArray);
 	}
 	return { b, score };

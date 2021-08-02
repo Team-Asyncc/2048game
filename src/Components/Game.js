@@ -27,6 +27,7 @@ const Game = () => {
 		defaultClass,
 		score,
 		setScore,
+		setCellMoving,
 	} = useGameContext();
 
 	const initilizeGame = () => {
@@ -51,12 +52,14 @@ const Game = () => {
 						gameData,
 						score,
 						gameClass,
-						setGameClass
+						setGameClass,
+						setCellMoving
 					);
 					setGameData(b);
 					setScore(newScore);
 					setTimeout(() => {
 						setGameClass(defaultClass);
+						setCellMoving(false);
 					}, 400);
 					// console.table(data);
 				}
@@ -67,11 +70,13 @@ const Game = () => {
 						gameData,
 						score,
 						gameClass,
-						setGameClass
+						setGameClass,
+						setCellMoving
 					);
 					setGameData(b);
 					setScore(newScore);
 					setTimeout(() => {
+						setCellMoving(false);
 						setGameClass(defaultClass);
 					}, 400);
 					// console.table(data);
@@ -84,11 +89,13 @@ const Game = () => {
 						gameData,
 						score,
 						gameClass,
-						setGameClass
+						setGameClass,
+						setCellMoving
 					);
 					setGameData(newArray);
 					setScore(newScore);
 					setTimeout(() => {
+						setCellMoving(false);
 						setGameClass(defaultClass);
 					}, 400);
 					// console.table(data);
@@ -101,11 +108,13 @@ const Game = () => {
 						gameData,
 						score,
 						gameClass,
-						setGameClass
+						setGameClass,
+						setCellMoving
 					);
 					setGameData(newArray);
 					setScore(newScore);
 					setTimeout(() => {
+						setCellMoving(false);
 						setGameClass(defaultClass);
 					}, 400);
 					// console.table(data);
