@@ -1,0 +1,84 @@
+@for $row from 0 through 3 {
+	@for $column from 0 through 3 {
+		.position_#{$row}_#{$column}:not(.isMoving) {
+			top: 100 * $row + 5px;
+			left: 100 * $column + 5px;
+		}
+	}
+}
+
+@for $fromColumn from 0 through 3 {
+	@for $toColumn from 0 through 3 {
+		$name: column_from_#{$fromColumn}_to_#{$toColumn};
+
+		@if $fromColumn == $toColumn {
+			.#{$name} {
+				left: 108 * $toColumn + 5px;
+			}
+		} @else {
+			.#{$name} {
+				top: 0;
+				animation-duration: 0.2s;
+				animation-name: $name;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes #{$name} {
+				from {
+					left: 108 * $fromColumn + 5px;
+				}
+				to {
+					left: 108 * $toColumn + 5px;
+				}
+			}
+		}
+	}
+}
+
+@for $fromRow from 0 through 3 {
+	@for $toRow from 0 through 3 {
+		$name: row_from_#{$fromRow}_to_#{$toRow};
+
+		@if $fromRow == $toRow {
+			.#{$name} {
+				top: 108 * $toRow + 5px;
+			}
+		} @else {
+			.#{$name} {
+				animation-duration: 0.2s;
+				animation-name: $name;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes #{$name} {
+				from {
+					top: 108 * $fromRow + 5px;
+				}
+				to {
+					top: 108 * $toRow + 5px;
+				}
+			}
+		}
+	}
+}
+
+.tile {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	margin: 4px;
+	line-height: 90px;
+	// display: inline-block;
+	// font-size: 55px;
+	// font-weight: bold;
+	// text-align: center;
+	// vertical-align: middle;
+	// border-radius: 7px;
+	// font-family: 'Clear Sans';
+	// color: #766;
+	// background-color: #3d29632a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+}
