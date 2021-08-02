@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
 .game__container {
 	width: fit-content;
 	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 .game__board__container {
 	width: max-content;
 	position: relative;
 	padding: 5px;
+	font-family: 'Julius Sans One', sans-serif, cursive;
 	background: rgba( 255, 255, 255, 0.30 );
 box-shadow: 0 16px 50px 0 rgba( 31, 38, 135, 0.7 );
 backdrop-filter: blur( 7.5px );
@@ -44,13 +51,23 @@ transform: perspective(1em) rotateX(0.2deg) rotateZ(0deg) rotateY(0deg);
 	font-weight: bold;
 }
 .score-box {
-	background-color: pink;
+	background: rgba( 255, 255, 255, 0.50 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 12.5px );
+-webkit-backdrop-filter: blur( 12.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+margin-bottom: 60px;
+color: #131483;
 	height: 50px;
 	width: 100px;
+	font-family: 'Julius Sans One', sans-serif, cursive;
 	font-weight: 800;
 	margin: 2%;
+	padding: 0.5rem;
 	text-align: center;
-	border-radius: 5px;
+	border-radius: 2px;
+	// transform: perspective(1em) rotateX(1deg) rotateZ(0deg) rotateY(0deg);
 }
 .score-box > .score-text {
 	font-size: large;
