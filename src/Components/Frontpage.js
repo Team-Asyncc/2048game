@@ -1,16 +1,17 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import '../styles/frontpage.scss';
 import Playbutton from './Playbutton';
 import Title from './Title';
 
 const FrontPage = () => {
-	// const Snowflakes = require('magic-snowflakes');
-	// const sf = new Snowflakes({
-	// 	container: document.querySelector('#snowflakes-container'),
-	// });
+	useEffect(() => {
+		const Snowflakes = require('magic-snowflakes');
+		const sf = new Snowflakes({
+			container: document.querySelector('.frontpage'),
+		});
+	}, [])
 	return (
 		<div className="frontpage" id="snowflakes-container">
-			{/* <Loader /> */}
 			<Title />
 			<Playbutton />
 		</div>
