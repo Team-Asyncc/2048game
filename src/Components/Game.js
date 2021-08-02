@@ -131,7 +131,7 @@ const Game = () => {
 		<div className="game__container">
 			<div className="score-box">
 				<div className="score-header">SCORE</div>
-				<div score-text>{score}</div>
+				<div className="score-text">{score}</div>
 			</div>
 			<section className="game__board__container">
 				{gameData.map((row, rowIdx) => {
