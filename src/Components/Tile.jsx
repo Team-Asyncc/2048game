@@ -20,10 +20,7 @@ const Tile = ({ value, r, c }) => {
 	console.log('called');
 	let classes = classArray.join(' ');
 	return (
-		<span
-			style={{ position: 'absolute', backgroundColor: getColors(value) }}
-			className={classes}
-		>
+		<span style={{ backgroundColor: getColors(value) }} className={classes}>
 			{value}
 		</span>
 	);
