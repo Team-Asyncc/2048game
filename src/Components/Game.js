@@ -20,6 +20,7 @@ const RIGHT_ARROW = 39;
 
 const Game = () => {
 	const { gameData, setGameData } = useGameContext();
+	const { score, setScore } = useGameContext();
 
 	const initilizeGame = () => {
 		let newGrid = deepClone(gameData);
@@ -38,25 +39,38 @@ const Game = () => {
 		}
 		switch (event.keyCode) {
 			case UP_ARROW:
-				// alert("up");
-				console.table('up');
-				setGameData(swipeUp(gameData));
-				// console.table(data);
+				{
+					const { b, score: newScore } = swipeUp(gameData, score);
+					setGameData(b);
+					setScore(newScore);
+					// console.table(data);
+				}
 				break;
 			case DOWN_ARROW:
-				console.table('down');
-				setGameData(swipeDown(gameData));
-				// console.table(data);
+				{
+					const { b, score: newScore } = swipeDown(gameData, score);
+					setGameData(b);
+					setScore(newScore);
+					// console.table(data);
+				}
 				break;
 			case LEFT_ARROW:
-				console.table('left');
-				setGameData(swipeLeft(gameData));
-				// console.table(data);
+				{
+					console.table('left');
+					const { newArray, score: newScore } = swipeLeft(gameData, score);
+					setGameData(newArray);
+					setScore(newScore);
+					// console.table(data);
+				}
 				break;
 			case RIGHT_ARROW:
-				console.table('right');
-				setGameData(swipeRight(gameData));
-				// console.table(data);
+				{
+					console.table('right');
+					const { newArray, score: newScore } = swipeRight(gameData, score);
+					setGameData(newArray);
+					setScore(newScore);
+					// console.table(data);
+				}
 				break;
 			default:
 				break;
@@ -67,6 +81,10 @@ const Game = () => {
 
 	return (
 		<div className="game__container">
+			<div className="score-box">
+				<div className="score-header">SCORE</div>
+				<div score-text>{score}</div>
+			</div>
 			<section className="game__board__container">
 				{gameData.map((row, rowIdx) => {
 					return (

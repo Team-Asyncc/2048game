@@ -1,7 +1,7 @@
 import { addNumber } from './addNumber';
 import { deepClone } from './deepClone';
-
-export const swipeLeft = (grid) => {
+export let score = 0;
+export const swipeLeft = (grid, score) => {
 	console.log('swipe left');
 	let oldGrid = grid;
 	let newArray = deepClone(grid);
@@ -29,6 +29,7 @@ export const swipeLeft = (grid) => {
 					b[slow] = b[slow] + b[fast];
 					b[fast] = 0;
 					fast = slow + 1;
+					score = score + b[slow];
 					slow++;
 				} else {
 					slow++;
@@ -41,10 +42,10 @@ export const swipeLeft = (grid) => {
 		addNumber(newArray);
 	}
 
-	return newArray;
+	return { newArray, score };
 };
 
-export const swipeRight = (grid) => {
+export const swipeRight = (grid, score) => {
 	console.log('swipe right');
 	let oldData = grid;
 	let newArray = deepClone(grid);
@@ -72,6 +73,7 @@ export const swipeRight = (grid) => {
 					b[slow] = b[slow] + b[fast];
 					b[fast] = 0;
 					fast = slow - 1;
+					score = score + b[slow];
 					slow--;
 				} else {
 					slow--;
@@ -83,10 +85,10 @@ export const swipeRight = (grid) => {
 	if (JSON.stringify(newArray) !== JSON.stringify(oldData)) {
 		addNumber(newArray);
 	}
-	return newArray;
+	return { newArray, score };
 };
 
-export const swipeDown = (grid) => {
+export const swipeDown = (grid, score) => {
 	console.log('swipe down');
 	console.log(grid);
 	let b = deepClone(grid);
@@ -113,6 +115,7 @@ export const swipeDown = (grid) => {
 					b[slow][i] = b[slow][i] + b[fast][i];
 					b[fast][i] = 0;
 					fast = slow - 1;
+					score = score + b[slow][i];
 					slow--;
 				} else {
 					slow--;
@@ -124,10 +127,10 @@ export const swipeDown = (grid) => {
 	if (JSON.stringify(b) !== JSON.stringify(oldData)) {
 		addNumber(b);
 	}
-	return b;
+	return { b, score };
 };
 
-export const swipeUp = (grid) => {
+export const swipeUp = (grid, score) => {
 	console.log('swipe up');
 	let b = deepClone(grid);
 	let oldData = JSON.parse(JSON.stringify(grid));
@@ -153,6 +156,7 @@ export const swipeUp = (grid) => {
 					b[slow][i] = b[slow][i] + b[fast][i];
 					b[fast][i] = 0;
 					fast = slow + 1;
+					score = score + b[slow][i];
 					slow++;
 				} else {
 					slow++;
@@ -164,5 +168,5 @@ export const swipeUp = (grid) => {
 	if (JSON.stringify(oldData) !== JSON.stringify(b)) {
 		addNumber(b);
 	}
-	return b;
+	return { b, score };
 };
