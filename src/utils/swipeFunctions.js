@@ -8,7 +8,7 @@ export const swipeLeft = (
 	setGameClass,
 	setCellMoving
 ) => {
-	console.log('swipe left');
+	// console.log('swipe left');
 	let oldGrid = grid;
 	let newArray = deepClone(grid);
 	let classArray = deepClone(gameClass);
@@ -66,7 +66,7 @@ export const swipeRight = (
 	setGameClass,
 	setCellMoving
 ) => {
-	console.log('swipe right');
+	// console.log('swipe right');
 	let oldData = grid;
 	let newArray = deepClone(grid);
 	let classArray = deepClone(gameClass);
@@ -124,8 +124,8 @@ export const swipeDown = (
 	setGameClass,
 	setCellMoving
 ) => {
-	console.log('swipe down');
-	console.log(grid);
+	// console.log('swipe down');
+	// console.log(grid);
 	let b = deepClone(grid);
 	let oldData = JSON.parse(JSON.stringify(grid));
 	let classArray = deepClone(gameClass);
@@ -182,7 +182,7 @@ export const swipeUp = (
 	setGameClass,
 	setCellMoving
 ) => {
-	console.log('swipe up');
+	// console.log('swipe up');
 	let b = deepClone(grid);
 	let oldData = JSON.parse(JSON.stringify(grid));
 	let classArray = deepClone(gameClass);

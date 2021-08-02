@@ -3,9 +3,9 @@ import '../styles/animation.scss';
 import { getColors } from '../utils/getColor';
 
 const Tile = ({ value, r, c }) => {
-	console.log('called');
+	// console.log('called');
 	const { gameClass } = useGameContext();
-	console.table(gameClass);
+	// console.table(gameClass);
 	let classArray = ['tile'];
 	if (gameClass[r][c].from !== -1) {
 		classArray.push(
@@ -17,7 +17,7 @@ const Tile = ({ value, r, c }) => {
 	} else {
 		return null;
 	}
-	console.log('called');
+	// console.log('called');
 	let classes = classArray.join(' ');
 	return (
 		<span style={{ backgroundColor: getColors(value) }} className={classes}>

@@ -84,7 +84,7 @@ const Game = () => {
 				break;
 			case LEFT_ARROW:
 				{
-					console.table('left');
+					// console.table('left');
 					const { newArray, score: newScore } = swipeLeft(
 						gameData,
 						score,
@@ -103,7 +103,7 @@ const Game = () => {
 				break;
 			case RIGHT_ARROW:
 				{
-					console.table('right');
+					// console.table('right');
 					const { newArray, score: newScore } = swipeRight(
 						gameData,
 						score,
@@ -131,7 +131,7 @@ const Game = () => {
 		<div className="game__container">
 			<div className="score-box">
 				<div className="score-header">SCORE</div>
-				<div score-text>{score}</div>
+				<div className="score-text">{score}</div>
 			</div>
 			<section className="game__board__container">
 				{gameData.map((row, rowIdx) => {
