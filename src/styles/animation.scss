@@ -18,7 +18,7 @@
 		} @else {
 			.#{$name} {
 				top: 0;
-				animation-duration: 0.2s;
+				animation-duration: 0.3s;
 				animation-name: $name;
 				animation-fill-mode: forwards;
 			}
@@ -45,7 +45,7 @@
 			}
 		} @else {
 			.#{$name} {
-				animation-duration: 0.2s;
+				animation-duration: 0.3s;
 				animation-name: $name;
 				animation-fill-mode: forwards;
 			}

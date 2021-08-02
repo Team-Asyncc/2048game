@@ -21,7 +21,11 @@ const Tile = ({ value, r, c }) => {
 	let classes = classArray.join(' ');
 	return (
 		<span
-			style={{ position: 'absolute', backgroundColor: getColors(value) }}
+			style={{
+				position: 'absolute',
+				backgroundColor: getColors(value),
+				borderRadius: '5px',
+			}}
 			className={classes}
 		>
 			{value}
