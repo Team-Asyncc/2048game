@@ -1,18 +1,18 @@
 import React from 'react';
-// import Loader from './loader';
 import '../styles/frontpage.scss';
 import Playbutton from './Playbutton';
-// import Snowflake from './Snowflake';
 import Title from './Title';
 
 const FrontPage = () => {
 	const Snowflakes = require('magic-snowflakes');
-	Snowflakes();
+	const sf = new Snowflakes({
+		container: document.querySelector('#snowflakes-container'),
+	});
 	return (
-		<div className="frontpage">
+		<div className="frontpage" id="snowflakes-container">
 			{/* <Loader /> */}
 			<Title/>
-			<Playbutton/>
+			<Playbutton Snowflakes={Snowflakes}/>
 		</div>
 	);
 };

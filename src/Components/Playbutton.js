@@ -2,9 +2,9 @@ import React from 'react'
 import "../styles/playbutton.scss"
 // import Title from './Title'
 
-const Playbutton = () => {
+const Playbutton = ({Snowflakes}) => {
   const handlePlay = () => {
-    console.log("hi");
+    console.log("HI");
   }
   return (
     <>
