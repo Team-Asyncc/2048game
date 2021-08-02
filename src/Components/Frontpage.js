@@ -4,15 +4,15 @@ import Playbutton from './Playbutton';
 import Title from './Title';
 
 const FrontPage = () => {
-	const Snowflakes = require('magic-snowflakes');
-	const sf = new Snowflakes({
-		container: document.querySelector('#snowflakes-container'),
-	});
+	// const Snowflakes = require('magic-snowflakes');
+	// const sf = new Snowflakes({
+	// 	container: document.querySelector('#snowflakes-container'),
+	// });
 	return (
 		<div className="frontpage" id="snowflakes-container">
 			{/* <Loader /> */}
-			<Title/>
-			<Playbutton Snowflakes={Snowflakes}/>
+			<Title />
+			<Playbutton />
 		</div>
 	);
 };
