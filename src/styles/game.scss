@@ -21,6 +21,7 @@ transform: perspective(1em) rotateX(0.3deg) rotateZ(0deg) rotateY(0deg);
 	display: flex;
 }
 
+
 .game__board__container::before {
 	pointer-events: none;
   content: "";
@@ -35,4 +36,22 @@ transform: perspective(1em) rotateX(0.3deg) rotateZ(0deg) rotateY(0deg);
   transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
   filter: blur(1em);
   opacity: 1;
+  
+.game__score {
+	height: 50px;
+	color: black;
+	font-size: 30px;
+	font-weight: bold;
+}
+.score-box {
+	background-color: pink;
+	height: 50px;
+	width: 100px;
+	font-weight: 800;
+	margin: 2%;
+	text-align: center;
+	border-radius: 5px;
+}
+.score-box > .score-text {
+	font-size: large;
 }
