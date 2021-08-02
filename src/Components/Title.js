@@ -8,7 +8,7 @@ const Title = () => {
       targets: '#name path',
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'linear',
-      duration: 2500,
+      duration: 3000,
       delay: function (el, i) {
         return i * 10;
       },
