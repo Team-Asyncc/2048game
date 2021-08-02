@@ -12,7 +12,58 @@ export const GameProvider = ({ children }) => {
 		[0, 0, 0, 0],
 		[0, 0, 0, 0],
 	]);
-
+	const [gameClass, setGameClass] = useState([
+		[
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+		],
+		[
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+		],
+		[
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+		],
+		[
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+		],
+	]);
+	const defaultClass = [
+		[
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+		],
+		[
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+		],
+		[
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+		],
+		[
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+			{ from: -1, to: -1 },
+		],
+	];
 	return (
 		<GameContext.Provider
 			value={{
@@ -24,6 +75,9 @@ export const GameProvider = ({ children }) => {
 				setGameData,
 				score,
 				setScore,
+				gameClass,
+				setGameClass,
+				defaultClass,
 			}}
 		>
 			{children}

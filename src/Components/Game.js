@@ -5,7 +5,7 @@ import { deepClone } from '../utils/deepClone';
 import { useGameContext } from '../context/GameContext';
 import { addNumber } from '../utils/addNumber';
 import { useEvent } from '../utils/useEvent';
-
+import Tile from './Tile';
 import {
 	swipeDown,
 	swipeLeft,
@@ -19,8 +19,15 @@ const LEFT_ARROW = 37;
 const RIGHT_ARROW = 39;
 
 const Game = () => {
-	const { gameData, setGameData } = useGameContext();
-	const { score, setScore } = useGameContext();
+	const {
+		gameData,
+		setGameData,
+		gameClass,
+		setGameClass,
+		defaultClass,
+		score,
+		setScore,
+	} = useGameContext();
 
 	const initilizeGame = () => {
 		let newGrid = deepClone(gameData);
@@ -40,35 +47,67 @@ const Game = () => {
 		switch (event.keyCode) {
 			case UP_ARROW:
 				{
-					const { b, score: newScore } = swipeUp(gameData, score);
+					const { b, score: newScore } = swipeUp(
+						gameData,
+						score,
+						gameClass,
+						setGameClass
+					);
 					setGameData(b);
 					setScore(newScore);
+					setTimeout(() => {
+						setGameClass(defaultClass);
+					}, 400);
 					// console.table(data);
 				}
 				break;
 			case DOWN_ARROW:
 				{
-					const { b, score: newScore } = swipeDown(gameData, score);
+					const { b, score: newScore } = swipeDown(
+						gameData,
+						score,
+						gameClass,
+						setGameClass
+					);
 					setGameData(b);
 					setScore(newScore);
+					setTimeout(() => {
+						setGameClass(defaultClass);
+					}, 400);
 					// console.table(data);
 				}
 				break;
 			case LEFT_ARROW:
 				{
 					console.table('left');
-					const { newArray, score: newScore } = swipeLeft(gameData, score);
+					const { newArray, score: newScore } = swipeLeft(
+						gameData,
+						score,
+						gameClass,
+						setGameClass
+					);
 					setGameData(newArray);
 					setScore(newScore);
+					setTimeout(() => {
+						setGameClass(defaultClass);
+					}, 400);
 					// console.table(data);
 				}
 				break;
 			case RIGHT_ARROW:
 				{
 					console.table('right');
-					const { newArray, score: newScore } = swipeRight(gameData, score);
+					const { newArray, score: newScore } = swipeRight(
+						gameData,
+						score,
+						gameClass,
+						setGameClass
+					);
 					setGameData(newArray);
 					setScore(newScore);
+					setTimeout(() => {
+						setGameClass(defaultClass);
+					}, 400);
 					// console.table(data);
 				}
 				break;
@@ -94,6 +133,19 @@ const Game = () => {
 							))}
 						</div>
 					);
+				})}
+				{gameData.map((row, rowIdx) => {
+					return row.map((val, colIdx) =>
+						val ? (
+							<Tile
+								key={rowIdx * 4 + colIdx}
+								r={rowIdx}
+								c={colIdx}
+								value={val}
+							/>
+						) : null
+					);
+					// return null;
 				})}
 			</section>
 		</div>
