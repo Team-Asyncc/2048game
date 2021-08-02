@@ -1,4 +1,5 @@
-import React,{useEffect} from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from 'react';
 import '../styles/frontpage.scss';
 import Playbutton from './Playbutton';
 import Title from './Title';
@@ -9,7 +10,7 @@ const FrontPage = () => {
 		const sf = new Snowflakes({
 			container: document.querySelector('.frontpage'),
 		});
-	}, [])
+	}, []);
 	return (
 		<div className="frontpage" id="snowflakes-container">
 			<Title />
