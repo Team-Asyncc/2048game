@@ -17,3 +17,21 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 .game__row {
 	display: flex;
 }
+.game__score {
+	height: 50px;
+	color: black;
+	font-size: 30px;
+	font-weight: bold;
+}
+.score-box {
+	background-color: pink;
+	height: 50px;
+	width: 100px;
+	font-weight: 800;
+	margin: 2%;
+	text-align: center;
+	border-radius: 5px;
+}
+.score-box > .score-text {
+	font-size: large;
+}
